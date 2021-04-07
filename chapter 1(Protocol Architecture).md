@@ -1,16 +1,16 @@
 # Data Communication
 ---
 ## Protocol Architecture
-- Layered Architecture
+- __Layered Architecture__
   - 복잡한 내용을 분할 정복해서 계층별로 정렬한 것이다.
   - 각 Layer는 바로 아래의 Layer만 이용 가능하고, 바로 위의 Layer에게 정보를 제공해준다.
   - 한 Layer의 변경이 반드시 다른 Layer의 변경을 유도하진 않는다.
 
 ![Layer](https://user-images.githubusercontent.com/80378041/113821626-4e18f580-97b7-11eb-93ed-860cd6e8d232.PNG)
 
-- Layered Protocol Architecture
+- __Layered Protocol Architecture__
   - 상대(peer Layer)와 통신하기 위한 약속(Protocol)이 필요하다.
-- Protocol의 key Elements
+- __Protocol의 key Elements__
   - __Syntax__ : 데이터 블럭의 형태
   - __Sementics__ : 데이터의 처리 방법, 에러 해결 방법 등
   - __Timing__ : 서로간의 (시간 등)동기화
@@ -18,9 +18,11 @@
 	- __PDU(Protocol Data Unit)__ : PCI + SDU, 프로토콜 실행을 위해 주고받는 단위 유닛
 	- __SDU(Service Data Unit)__ : 프로토콜의 서비스 유닛(자신이 서비스 받고싶은 유닛)
 	- __PCI(Protocol Control Information)__ : 프로토콜 기능 실현을 위한 제어정보, Protocol Header
-![PDU](https://user-images.githubusercontent.com/80378041/113822889-f5e2f300-97b8-11eb-9953-3e63e9b8d788.PNG)>Layered Protocol Architecture Example
+![PDU](https://user-images.githubusercontent.com/80378041/113822889-f5e2f300-97b8-11eb-9953-3e63e9b8d788.PNG)
+>Layered Protocol Architecture Example
 
-![LP](https://user-images.githubusercontent.com/80378041/113823314-79044900-97b9-11eb-976c-9dcd1f82b5bc.PNG)>peer 사이의 통신 시에 물리적으로는 계층구조를 통하지만, 논리적으로는 peer 사이가 직접 연결 된 것 처럼 인식한다
+![LP](https://user-images.githubusercontent.com/80378041/113823314-79044900-97b9-11eb-976c-9dcd1f82b5bc.PNG)
+>peer 사이의 통신 시에 물리적으로는 계층구조를 통하지만, 논리적으로는 peer 사이가 직접 연결 된 것 처럼 인식한다
 ## Standard Protocol Architecture
 - __OSI Reference model__ : De Jure Standard(법률적인 표준)
 	- ISO에서 정한 표준
