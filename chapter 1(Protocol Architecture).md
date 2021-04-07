@@ -11,22 +11,21 @@
 - Layered Protocol Architecture
   - 상대(peer Layer)와 통신하기 위한 약속(Protocol)이 필요하다.
 - Protocol의 key Elements
-  - Syntax : 데이터 블럭의 형태
-  - Sementics : 데이터의 처리 방법, 에러 해결 방법 등
-  - Timing : 서로간의 (시간 등)동기화
-- PDU, SDU, PCI
-	- PDU(Protocol Data Unit) : PCI + SDU, 프로토콜 실행을 위해 주고받는 단위 유닛
-	- SDU(Service Data Unit) : 프로토콜의 서비스 유닛(자신이 서비스 받고싶은 유닛)
-	- PCI(Protocol Control Information) : 프로토콜 기능 실현을 위한 제어정보, Protocol Header
-![PDU](https://user-images.githubusercontent.com/80378041/113822889-f5e2f300-97b8-11eb-9953-3e63e9b8d788.PNG)
-- Layered Protocol Architecture Example
-![LP](https://user-images.githubusercontent.com/80378041/113823314-79044900-97b9-11eb-976c-9dcd1f82b5bc.PNG)
-peer 사이의 통신 시에 물리적으로는 계층구조를 통하지만, 논리적으로는 peer 사이가 직접 연결 된 것 처럼 인식한다
+  - __Syntax__ : 데이터 블럭의 형태
+  - __Sementics__ : 데이터의 처리 방법, 에러 해결 방법 등
+  - __Timing__ : 서로간의 (시간 등)동기화
+- __PDU, SDU, PCI__
+	- __PDU(Protocol Data Unit)__ : PCI + SDU, 프로토콜 실행을 위해 주고받는 단위 유닛
+	- __SDU(Service Data Unit)__ : 프로토콜의 서비스 유닛(자신이 서비스 받고싶은 유닛)
+	- __PCI(Protocol Control Information)__ : 프로토콜 기능 실현을 위한 제어정보, Protocol Header
+![PDU](https://user-images.githubusercontent.com/80378041/113822889-f5e2f300-97b8-11eb-9953-3e63e9b8d788.PNG)>Layered Protocol Architecture Example
+
+![LP](https://user-images.githubusercontent.com/80378041/113823314-79044900-97b9-11eb-976c-9dcd1f82b5bc.PNG)>peer 사이의 통신 시에 물리적으로는 계층구조를 통하지만, 논리적으로는 peer 사이가 직접 연결 된 것 처럼 인식한다
 ## Standard Protocol Architecture
-- OSI Reference model : De Jure Standard(법률적인 표준)
+- __OSI Reference model__ : De Jure Standard(법률적인 표준)
 	- ISO에서 정한 표준
 	- 7개의 계층이 있음
-- TCP/IP protocol suite : De Facto Standard(사실상의, 마켓을 장악한 표준)
+- __TCP/IP protocol suite__ : De Facto Standard(사실상의, 마켓을 장악한 표준)
 	- 현재 가장 널리 쓰이고 있음
 #### OSI 7계층
 - Physical : 신호를 처리해서 bit stream을 보내느 역할(전기, 기능, 기계적 신호)
