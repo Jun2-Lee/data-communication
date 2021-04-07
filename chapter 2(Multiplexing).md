@@ -111,9 +111,11 @@ __Constant Service Time (M/D(값이 정해짐)/1)__
 ### Poisson Random Variable
 
 ![p](https://user-images.githubusercontent.com/80378041/113853935-3e120d80-97d9-11eb-8b27-a54d16dc7968.PNG)
->   k : 어떤 사건의 발생 횟수    
->   lambda : 이 사건의 평균 발생 확률(이것을 알고 있어야 함)
->   모든 사건은 독립적으로 일어나야 
+>   k : 어떤 사건의 발생 횟수. 
+>   
+>   lambda : 이 사건의 평균 발생 확률(이것을 알고 있어야 한다). 
+>   
+>   모든 사건은 독립적으로 일어나야 한다.
 
 __The relation between Poisson and Exponential__
 
