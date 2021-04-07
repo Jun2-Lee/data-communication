@@ -1,4 +1,4 @@
-# Data Communication
+# Layered Architecture
 ---
 ## Protocol Architecture
 - __Layered Architecture__
@@ -7,9 +7,9 @@
   - 한 Layer의 변경이 반드시 다른 Layer의 변경을 유도하진 않는다.
 
 ![Layer](https://user-images.githubusercontent.com/80378041/113821626-4e18f580-97b7-11eb-93ed-860cd6e8d232.PNG)
-
-- __Layered Protocol Architecture__
-  - 상대(peer Layer)와 통신하기 위한 약속(Protocol)이 필요하다.
+## Layered Protocol Architecture
+- __Protocol__
+  - 상대(peer Layer)와 통신하기 위한 약속(Protocol).
 - __Protocol의 key Elements__
   - __Syntax__ : 데이터 블럭의 형태
   - __Sementics__ : 데이터의 처리 방법, 에러 해결 방법 등
