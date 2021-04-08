@@ -44,13 +44,78 @@ __Type of Contention based MAC Protocol__
 - 1970년에 하와이 주립대에서 만듬.
 - __Pure ALOHA__
   - 데이터가 들어오면 바로 전송
-  - 만약 충돌이 발생한다면, random delay 이후에 다시 보낸다
-  - 최대 효율이 18%
+  - 만약 충돌이 발생한다면, random delay 이후에 다시 보낸다(이전에 충돌 했던것들 간의 충돌을 막기 위해)
+  - 최대 효율이 18%이다.
 
 ![f](https://user-images.githubusercontent.com/80378041/113896491-f0ab9580-9804-11eb-80ab-82ddcc33c7a8.PNG)
 
 - __Slotted ALOHA__
-  -
+  - 데이터가 들어와도 slot의 시작 시점에만 데이터를 전송한다.
+  - Node들이 central clock으로 동기화 되어있어야 한다.
+  - 충돌이 일어나면 프레임이 사라지거나 전체가 겹쳐진다
+  - 최대 효율이 37%이다.
+
+![wqe](https://user-images.githubusercontent.com/80378041/113952487-b9fb6c80-9850-11eb-9912-86042d251efc.PNG)
+
+##### Performance Analysis of Pure ALOHA protocol
+- Slot length를 1, 평균 도착 Frame을 Poisson 도착 비율 lambda라고 가정하자.
+- __Throughput__ = Arrival Rate * Pr(Success) = lambda * Pr(success)
+  - Pr(success) = Pr(No collision)
+  - Packet Arrival during the interval (𝑡−1,𝑡+1)
+   
+    ![x](https://user-images.githubusercontent.com/80378041/113952897-938a0100-9851-11eb-9f5a-ab5eea1ba015.PNG)
+    >m = (t+1 - (t-1)) * lambda
+  
+  - Pr(No Collision) →Pr(No Packet Arrival) : P_x(0)(충돌이 발생하지 않을 경우는 t-1부터 t+1까지 프레임이 전송되지 않을 확률과 같다.)
+  - Throughput : lambda * P_x(0)
+  - When does the throughput have the maximum : Throughput을 미분했을 때 0이 되는 lambda값이 maximum이다. 따라서 이 문제의 경우에는 lmabda = 1/2일 때이다.
+
+##### Performance Analysis of Slotted ALOHA protocol
+- 기본적인 동작은 Pure ALOHA와 동일하다.
+- 하지만 충돌이 발생하는 범위가 t-1~t이다.
+#### CSMA(Carrier Sense Multiple Access)
+- 데이터를 전송하기 전에 내가 사용할 carrier주파수가 사용중인지 탐색한다
+- 만약 사용중이 아니면, 전송을 시작한다.
+- 사용 중일때는 다음 3가지 중에 1가지 방법을 사용한다
+  - 채널이 idle 해 질때까지 기다렸다가 전송 -> 1 Persistent-CSMA
+  - 채널이 idle 해 질때까지 기다린 후 p의 확률에 인해 전송 -> p Persistant-CSMA 
+    - 어떤 1개가 p의 확률로 1개만 전송될 확률은 np(1-p)^n-1이다
+  - 채널이 사용중이면, random delay이후에 다시 사용중인지 검사 -> NP-CSMA
+__Persistand__ : channel이 busy하면 idle해 질때까지 기다리는 것
+
+![xc](https://user-images.githubusercontent.com/80378041/113953860-b0bfcf00-9853-11eb-83bf-faa725d3445a.PNG)
+
+##### CSMA collisions
+- 기본적으로 충돌이 없을 것 같지만, 전파지연(Propagation Delay) 때문에 충돌이 발생함.
+
+![xcva](https://user-images.githubusercontent.com/80378041/113953966-ebc20280-9853-11eb-9b53-98496528361e.PNG)
+> t1이 검사를 했을때는 channel이 idle 했었다.
+
+###### Network Delay
+- Transmission Delay(전송 지연) : 데이터의 양 / Data Rate in bps
+  - 데이터의 양에 따라 결정됨. 
+  - ex) 우리가 큰 용량의 사진을 보내면 다운받는데 오래걸리는 것
+- Propagation Delay(전파 지연) : 링크의 길이 / 신호의 속도(Maybe 빛의 속도)
+  - 링크의 길이에 따라 결정됨.
+
+![v](https://user-images.githubusercontent.com/80378041/113954699-4e67ce00-9855-11eb-84b9-a52d7279add4.PNG)
+
+#### CSMA/CD(COllision Detection)
+- CSMA를 사용하면, 충돌이 일어났을 때 충돌의 피해가 큼 -> 충돌의 피해를 감소시키기 위해 CSMA/CD를 도입(충돌 자체를 막는 것은 아니다)
+- 충돌이 발생한 것을 감지한다 -> 전송을 중단한다 -> 채널이 낭비되는 것을 줄일 수 있다.
+- 작동 구조는 다음과 같다
+  - 채널이 idle하면, 전송을 시작한다. 아니면, 다음으로 넘어간다.
+  - 채널이 busy하면, idle 해질 때까지 기다린 후, 전송을 시작한다(여기까지는 CSMA와 동일)
+  - 충돌이 감지되면, 전송을 중지한다
+  - 걸림(jam)이 끝난 후, random 시간을 기다린 후에 1번부터 다시 시작한다.
+ 
+![erw](https://user-images.githubusercontent.com/80378041/113955283-61c76900-9856-11eb-80a9-f242477b145e.PNG)
+
+![we](https://user-images.githubusercontent.com/80378041/113955323-773c9300-9856-11eb-9128-2ebbf7031b97.PNG)
+> 보낸 신호와 검사한 신호가 같지 않으면, 충돌이 일어난 것이다.
+
+
+
 
 
 
