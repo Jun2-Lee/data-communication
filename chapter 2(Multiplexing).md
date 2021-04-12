@@ -22,7 +22,7 @@ __Multiplexing Type__
 #### FDM(Frequency Division Multiplexing)
 - analog signal을 사용 가능
 - 전송할 Data가 있던 없던 채널을 할당하는 단점이 존재 -> 자원 낭비
-- 반송파(carrier frequencies)가 주파수를 겹치지 않게, _Guard Bands_를 포함해서 분리해줌
+- 반송파(carrier frequencies)가 주파수를 겹치지 않게, _Guard Bands_ 를 포함해서 분리해줌
 ![FDM](https://user-images.githubusercontent.com/80378041/113839815-ff755680-97ca-11eb-84b3-0723a48216e3.PNG)
 
 __Baseband Signal & Modulation__
