@@ -114,10 +114,34 @@ __Persistand__ : channel이 busy하면 idle해 질때까지 기다리는 것
 ![we](https://user-images.githubusercontent.com/80378041/113955323-773c9300-9856-11eb-9128-2ebbf7031b97.PNG)
 > 보낸 신호와 검사한 신호가 같지 않으면, 충돌이 일어난 것이다.
 
+###### 2 Observation on CSMA/CD
+- transmitter가 전송/수신을 동시에 할 수 있어야 한다.
+- 송신 신호 세기(Tx)와 수신 신호 세기(Rx)가 비슷해야 감지가 가능하다.
+- 
+__이러한 이유들로 인해서 무선에서는 사용하기가 어렵다__
 
+![x](https://user-images.githubusercontent.com/80378041/114340035-9fe3c600-9b91-11eb-87f5-da731e9653bc.PNG)
+> A에서 봤을 때, C의 신호가 도달한다고 하더라도, 신호의 세기가 너무 차이나서 detect하기가 매우 힘들다 (Near-Far effect). --> 이러한 이유로 Rx, Tx를 동시에 하기가 힘들다.
 
+###### HTP(Hide Terminal Problem)
 
+![HTP](https://user-images.githubusercontent.com/80378041/114340545-c22a1380-9b92-11eb-9c54-f7fc92412f7e.PNG)
+> A가 carrier sense를 함 -> 하지만 C의 신호가 SINR threshold(수신민감도) 아래이기 때문에 A에서는 C의 신호를 감지를 하지 못함 -> channel이 Idle하다고 판단해서 신호를 보냄 -> B에서 충돌이 발생. ==> 이 경우에 A의 입장에서는 C가 숨겨져 있다(C is hidden terminal to A)라고 한다.
 
+###### ETP(Exposed Terminal Problem)
+
+![etp](https://user-images.githubusercontent.com/80378041/114341002-bc80fd80-9b93-11eb-9321-0e7cfb1fbdee.PNG)
+> X는 Y에게 신호를 보내고 싶음 -> carrier sense를 했는데, A가 전송중이라 전송을 하지 않음 -> 하지만, Y는 A의 범위 밖이라서 충돌이 일어나지 않음.
+> 반대로,A도 X가 전송중이라 전송을 하지 않았는데,X와 B도 충돌이 일어나지 않음. ==> 두가지 경우에 손해가 일어났다.(성능 저하) 
+> 여기서 충돌이란 reciever 입장에서 판단해야 한다는 것을 알 수 있다.
+
+#### Taking Turns Mac Protocols
+- Polling
+  - master node가 node들의 turn을 지정해주는 방식이다.
+  - polling overhead, 지연, master node가 고장나면 시스템이 고장난다는 문제점이 있다.
+- Token Passing
+  - Token이 존재하고, token을 가지고 있는 node의 turn이 되는 방식.
+  - token overhead, 지연, token이 없어지면 안된다는 문제점이 있다.
 
 
 
