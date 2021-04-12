@@ -29,6 +29,7 @@ __Baseband Signal & Modulation__
 - Baseband Signal : modulation이 되기 전의 신호(우리가 보내고자 하는 신호)
 - modulation : BaseBand에 반송파(carrier frequencies)를 씌우는 것.
 - Passband Signal : Molulation을 거친 후의 신호
+
 ![BB](https://user-images.githubusercontent.com/80378041/113840442-a5c15c00-97cb-11eb-84f7-3f9fb2c32cbb.PNG)
 >            Modulation 식. 이때 X = f_c+f_m, Y = f_c-f_m
 
