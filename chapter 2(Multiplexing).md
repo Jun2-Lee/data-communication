@@ -73,6 +73,7 @@ __Digital Carrier Systems__
 - __Input Rate__(넣는 데이터) : lambda, __Output Data Rate__(처리할 수 있는 데이터) : mu
   - Average of lambda < Average of mu(capacity)여야 한다 --> lambda > mu이면 큐에 무한하게 item들이 쌓이게 되고,
     lambda = mu이면 무한 loop가 돌게 된다.
+    
 ![q](https://user-images.githubusercontent.com/80378041/113850207-2d5f9880-97d5-11eb-9a19-c1e633e77412.PNG)
 __Basic Queueing Parameters__
 - lambda : Arrival Rate(input Rate)
