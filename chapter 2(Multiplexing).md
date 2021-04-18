@@ -2,9 +2,11 @@
 ---
 ## Link Layer - Multiplexing
 __전송매체의 분류__
-- Wired(유선) : 점대점 매체로, 양끝의 두 장치만 매체를 사용한다(Point to Point 방식) 
+- Wired(유선) <-> Wireless(무선)
+
+- Point to Point 방식 : 점대점 매체로, 양끝의 두 장치만 매체를 사용한다
   - 전송매체 : Twisted Pair, Coaxial Cable...
-- Wireless(무선) : 공유매체로, 여러 장치가 매체를 함께 사용한다(Multi-Point/Shared Media)
+- Multi-Point/Shared Media : 공유매체로, 여러 장치가 매체를 함께 사용한다
   - 전송매체 : Air, Sea Water...
 
 __통신의 종류__
