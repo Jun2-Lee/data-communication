@@ -35,6 +35,8 @@
 - LAN(Local Area Network)에서 많이 쓰임
   - WAN(Wide) -> MAN(Metro) -> LAN(Local) -> PAN(Personal) -> BAN(Body)
 - 충돌을 어떻게 감지할 것인지, 충돌을 어떻게 복구할 것인지 고려해야 함.
+
+
 __Type of Contention based MAC Protocol__
   - ALOHA(Pure ALOHA), slotted ALOHA
   - CSMA(carrier sense multiple access)
