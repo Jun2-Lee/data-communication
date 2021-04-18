@@ -83,6 +83,8 @@ __Type of Contention based MAC Protocol__
   - 채널이 idle 해 질때까지 기다린 후 p의 확률에 인해 전송 -> p Persistant-CSMA 
     - 어떤 1개가 p의 확률로 1개만 전송될 확률은 np(1-p)^n-1이다
   - 채널이 사용중이면, random delay이후에 다시 사용중인지 검사 -> NP-CSMA
+
+
 __Persistand__ : channel이 busy하면 idle해 질때까지 기다리는 것
 
 ![xc](https://user-images.githubusercontent.com/80378041/113953860-b0bfcf00-9853-11eb-83bf-faa725d3445a.PNG)
