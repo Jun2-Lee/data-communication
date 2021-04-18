@@ -3,7 +3,7 @@
 - 2 different Binaty Channel Models
   - Binary Channel이란 1과 0두가지 Symbol만을 전송하는 채널이다.
 
-![er](https://user-images.githubusercontent.com/80378041/114344571-0ae5ca80-9b9b-11eb-949d-012e467cde4f.PNG
+![er](https://user-images.githubusercontent.com/80378041/114344571-0ae5ca80-9b9b-11eb-949d-012e467cde4f.PNG)
 > BSC(Binary Symmetric Channel) : 보낸 값이 바뀜  BEC(Binary Erasure Channel) : 보낸 값이 사라짐.
 
 #### Error in computer Network
