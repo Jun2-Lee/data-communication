@@ -62,6 +62,8 @@ __Synchronous TDM의 구조__
 - (a) : 각각의 input slot의 duration은? --> 1ms(1/1000s)
 - (b) : 각각의 output slot의 duration은? --> 1/3ms(1/3000s)
 - (c) : 각각의 frame의 duration은? --> 1ms(1/1000s)
+
+
 __Digital Carrier Systems__
 - 통신 사업자들이 디지털 기간 망 구축에 사용한 TDM 체계
 ![ds](https://user-images.githubusercontent.com/80378041/113847701-af9a8d80-97d2-11eb-86a9-be4d13d3c26d.PNG)
